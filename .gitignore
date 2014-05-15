@@ -1,0 +1,164 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JFrame;
+import javax.swing.JComponent;
+public class Making_A_House
+{
+    public static void draw(Graphics g)
+    {
+        Color brown = new Color(125,50,0);
+        Color black = new Color(10,10,10);        
+        Color brown2 = new Color(150,50,0);
+        Color green = new Color(0,175,100);   
+        Color white = new Color(255,255,255);
+        
+        //grass
+        g.fillRect(0,0,1285,985);
+        
+        //left building
+        g.setColor(brown);
+        g.fillRect(280,240,179,310);
+        
+        //left building roof
+        g.setColor(black);
+        g.fillPolygon(new int[]{280,369,459}, new int[]{240,150,240},3);
+        
+        //left building left window
+        g.setColor(white);
+        g.fillRect(290,250,20,30);
+        
+        //left building right window
+        g.setColor(white);
+        g.fillRect(429,250,20,30);
+        
+        //left building left window frames vertical
+        g.setColor(black);
+        g.fillRect(299,250,2,30);
+        
+        //left building left window frames horizontal
+        g.setColor(black);
+        g.fillRect(290,264,20,2);
+        
+        //left building right window vertical
+        g.setColor(black);
+        g.fillRect(438,250,2,30);
+        
+        //left building right window horizontal
+        g.setColor(black);
+        g.fillRect(429,264,20,2);
+        
+        //left building door
+        g.setColor(brown2);
+        g.fillRect(359,500,30,50);
+        
+        //left building doorknob
+        g.setColor(black);
+        g.fillOval(361,515,5,5);
+        
+        //black line between left and middle building
+        g.setColor(black);
+        g.fillRect(459,370,1,180);
+        
+        //middle house roof
+        g.setColor(black);
+        g.fillPolygon(new int[]{460,550,640}, new int[]{370,280,370},3);
+        
+        //middle building
+        g.setColor(brown);
+        g.fillRect(460,370,180,180);
+        
+        //middle house door
+        g.setColor(brown2);
+        g.fillRect(530,500,30,50);
+        
+        //middle house doorknob
+        g.setColor(black);
+        g.fillOval(532,515,5,5);
+        
+        //middle house left window
+        g.setColor(white);
+        g.fillRect(475,390,20,30);
+       
+        //middle house right window
+        g.setColor(white);
+        g.fillRect(605,390,20,30);        
+        
+        //middle house left window frames vertical
+        g.setColor(black);
+        g.fillRect(484,390,2,30);
+        
+        //middle house left window frames horizontal
+        g.setColor(black);
+        g.fillRect(475,404,20,2);
+        
+        //middle house right window frames vertical
+        g.setColor(black);
+        g.fillRect(614,390,2,30);
+        
+        //middle house right window frames horizontal
+        g.setColor(black);
+        g.fillRect(605,404,20,2);
+        
+        //line between middle and right building
+        g.setColor(black);
+        g.fillRect(640,370,1,180);
+        
+        //right building roof
+        g.setColor(black);
+        g.fillPolygon(new int[]{641,731,821}, new int[]{240,150,240},3);
+        
+        //right building
+        g.setColor(brown);
+        g.fillRect(641,240,180,310); 
+        
+        //right building left window
+        g.setColor(white);
+        g.fillRect(651,250,20,30);
+        
+        //right building right window
+        g.setColor(white);
+        g.fillRect(791,250,20,30);
+        
+        //right building left window frames vertical
+        g.setColor(black);
+        g.fillRect(660,250,2,30);
+        
+        //right building left window frames horizontal
+        g.setColor(black);
+        g.fillRect(651,265,20,2);
+        
+        //right building right window vertical
+        g.setColor(black);
+        g.fillRect(800,250,2,30);
+        
+        //right building right window horizontal
+        g.setColor(black);
+        g.fillRect(791,264,20,2);
+        
+        //right building door
+        g.setColor(brown2);
+        g.fillRect(715,500,30,50);
+        
+        //right building doorknob
+        g.setColor(black);
+        g.fillOval(717,515,5,5);
+    }   
+    public static void main(String[] args)
+        {
+            JFrame frame = new JFrame();  
+            final int FRAME_WIDTH = 1285;
+            final int FRAME_HIGHT = 985;     
+            frame.setSize(FRAME_WIDTH, FRAME_HIGHT);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JComponent component = new JComponent()
+            {
+                public void paintComponent(Graphics graph)
+                {
+                    draw(graph);
+                }
+            };
+            frame.add(component);
+            frame.setVisible(true);
+
+        }
+    }
